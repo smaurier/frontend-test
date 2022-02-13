@@ -4,21 +4,62 @@ import { mdiMagnify } from '@lumx/icons';
 import { get } from '../../api';
 import useCharacterContext from "../../hooks/useCharacterContext";
 
-//ajout listener sur bouton entrer dans un useEffect
-
 function SearchField(){
-	const {characters, setCharacters} = useCharacterContext() 
-    
-	const handleChange = async (e) => {
-		const data = await get(`characters?name=${e}`)
-		setCharacters(data.data.results)
+	const [isLoaded, setIsLoaded] = useState(false)
+	const [allCharacters, setAllCharacters] = useState(false)
+	const {characters, setCharacters} = useCharacterContext()
+
+	useEffect(() => {
+		getAllCharacters()
+	},[])
+
+	const getAllCharacters = async () => {
+		const response = await get(`characters`)
+		const nbCharacters = response.data.data.total //Nombre de personnage existants dans la bdd : Actuellement 1559
+
+		let offset=0;
+		let allCharacters = [];
+
+		while(offset <= 200 ){ //200 pour eviter de saturer l'api, à remplacer par nbCharacters
+			let response = await get(`characters?limit=100&offset=${offset}`)
+			allCharacters=[...allCharacters,...response.data.data.results]
+			offset=offset+100
+		}
+
+		setIsLoaded(true)
+		console.log(allCharacters)
+		setAllCharacters(allCharacters)
 	}
 
-	return (
-		<>
-			<TextField theme={Theme.dark} placeholder="Search ..." icon={mdiMagnify} value={characters} onChange={(e) => handleChange(e)} />
-		</>
-	)
+	const handleChange = (nameCharacter) => {
+		console.log(nameCharacter); 
+		console.log(allCharacters.value); 
+		
+		let resultCharacters= []
+
+		for(let character of Array.from(allCharacters) ){
+			if(character.name.toLowerCase().includes(nameCharacter.toLowerCase())){
+				resultCharacters.push(character)
+			}
+		}
+
+		setCharacters(resultCharacters)
+
+		console.log("resultCharacters",resultCharacters)
+	}
+
+
+	if(isLoaded){
+		return (
+			<>
+				<TextField theme={Theme.dark} placeholder="Search ..." icon={mdiMagnify} onChange={handleChange} />
+			</>
+		)
+	} else {
+		return (
+			<span>is Loading</span>
+		)
+	}
 }
 
 
