@@ -6,7 +6,7 @@ import MainRouter from '../router';
 import './App.scss';
 // import Cards from '../components/Cards';
 
-//i18n ?
+// i18n ?
 // balises aria
 // accessibilité ?
 // ergonomie ?

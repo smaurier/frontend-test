@@ -32,12 +32,11 @@ function SearchField(){
 	}
 
 	const handleChange = (nameCharacter) => {
-		console.log(nameCharacter); 
-		console.log(allCharacters.value); 
+		console.log(nameCharacter);
 		
 		let resultCharacters= []
 
-		for(let character of Array.from(allCharacters) ){
+		for(let character of allCharacters){
 			if(character.name.toLowerCase().includes(nameCharacter.toLowerCase())){
 				resultCharacters.push(character)
 			}
