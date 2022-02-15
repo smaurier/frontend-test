@@ -1,14 +1,8 @@
-import React, {useState, useEffect} from "react";
-import {get} from "../../api/index"
-import useCharacterContext from "../../hooks/useCharacterContext";
-import useSearchResultContext from "../../hooks/useSearchContext";
-import _ from 'lodash'
+import React from "react";
+import Cards from "../../components/Cards";
+
 function Home(){
-
-    const {characters} = useCharacterContext() 
-
-    return <></>
-
+    return <Cards/>
 }
 
 export default Home

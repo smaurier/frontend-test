@@ -7,6 +7,7 @@ import './App.scss';
 // import Cards from '../components/Cards';
 
 // i18n ?
+// html5
 // balises aria
 // accessibilité ?
 // ergonomie ?

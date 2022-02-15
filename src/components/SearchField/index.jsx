@@ -44,7 +44,7 @@ function SearchField(){
 
 		setCharacters(resultCharacters)
 
-		console.log("resultCharacters",resultCharacters)
+		console.log("characters",resultCharacters)
 	}
 
 
