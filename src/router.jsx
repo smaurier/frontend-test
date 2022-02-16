@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import Detail from './pages/Detail';
 
 
+
 function MainRouter(){
   return(
     <Router>

@@ -1,4 +1,37 @@
 .card{
     border-radius: 4px;
-    border: 1px solid grey;
+    border: 1px solid lumx-color-variant('primary', 'L3');
+    display: flex;
+    padding: 24px 36px 24px 24px;
+    margin-bottom: 40px;
+
+    img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 36px;
+        object-fit: cover;
+        flex-shrink: 0;
+        border: 1px solid lumx-color-variant('primary', 'L5');
+    }
+
+    & > div {
+        width: 100%;
+
+        .lumx-typography-display1 {
+            margin-bottom: $lumx-spacing-unit-big;
+        }
+    
+        .lumx-typography-body2{
+            min-height: 130px;
+            margin-bottom: $lumx-spacing-unit-huge;
+            background-color: lumx-color-variant('primary', 'L6');
+            padding: 16px;
+            .span--noResult {
+                color: lumx-color-variant('primary', 'L2')
+            }
+        }
+    }
+
 }

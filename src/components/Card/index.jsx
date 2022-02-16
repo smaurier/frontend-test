@@ -1,5 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
+import { Button} from '@lumx/react';
+import { mdiEye} from '@lumx/icons';
 
 function Card (props){
 	const thumbnail = props.thumbnail;
@@ -17,11 +19,11 @@ function Card (props){
 		<div className='card'>
 			<img src={thumbnail}/>
 			<div>
-				<p className="lumx-typography-title">{nameCharacter}</p>
-				<p>
-					 {description}
+				<p className="lumx-typography-display1">{nameCharacter}</p>
+				<p className="lumx-typography-body2">
+					{description===""?<span className='span--noResult'>Aucune description trouvée</span>:description}
 				</p>
-				<button onClick={handleProceed} to="/detail/:id">Voir les détails</button>
+				<Button leftIcon={mdiEye} onClick={handleProceed} to="/detail/:id">Voir les détails</Button>
 			</div>
 		</div>
 	)

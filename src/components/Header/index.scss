@@ -1,5 +1,10 @@
 .header {
     background-color: lumx-color-variant('primary', 'N');
+    & > div {
+        justify-content: space-between;
+        max-width:1500px;
+        margin: auto
+    }
     .logo{
         width: 10rem;
         height: 4rem;

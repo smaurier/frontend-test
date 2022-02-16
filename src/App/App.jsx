@@ -13,7 +13,7 @@ import './App.scss';
 // ergonomie ?
 // utiliser flex et grid
 // utiliser mixins et variables
-// favicon
+// reset css
 
 function App() {
   return (

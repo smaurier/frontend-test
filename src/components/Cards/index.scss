@@ -1,0 +1,23 @@
+.cards {
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > p {
+            display: inline-block;
+            margin: 0 16px;
+            font-size: 32px;
+        }
+    }
+}
+
+.noResult{
+    text-align: center;
+    img{
+        height: 200px;
+        width: 330px;
+        object-fit: cover;
+        margin-top: 44px;
+    }
+}
+

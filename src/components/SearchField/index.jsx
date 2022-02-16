@@ -3,6 +3,7 @@ import { TextField, Theme } from '@lumx/react';
 import { mdiMagnify } from '@lumx/icons';
 import { get } from '../../api';
 import useCharacterContext from "../../hooks/useCharacterContext";
+import { Progress, ProgressVariant } from '@lumx/react';
 
 function SearchField(){
 	const [isLoaded, setIsLoaded] = useState(false)
@@ -51,12 +52,14 @@ function SearchField(){
 	if(isLoaded){
 		return (
 			<>
-				<TextField theme={Theme.dark} placeholder="Search ..." icon={mdiMagnify} onChange={handleChange} />
+				<TextField theme={Theme.dark} placeholder="Rechercher ..." icon={mdiMagnify} onChange={handleChange} />
 			</>
 		)
 	} else {
 		return (
-			<span>is Loading</span>
+			<>
+				<Progress theme={Theme.dark} />
+			</>
 		)
 	}
 }
