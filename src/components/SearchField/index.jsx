@@ -17,19 +17,18 @@ function SearchField(){
 
 	const getAllCharacters = async () => {
 		const response = await get(`characters`)
-		const nbCharacters = response.data.data.total //Nombre de personnage existants dans la bdd : Actuellement 1559
+		const nbCharacters = response.data.data.total // Nombre de personnage existants dans la bdd de l'api: Actuellement 1559
 
 		let offset=0;
 		let allCharacters = [];
 
-		while(offset <= nbCharacters ){ //200 pour eviter de saturer l'api, à remplacer par nbCharacters en production
+		while(offset <= nbCharacters ){ // Mettre à 200 pour eviter de saturer l'api, à remplacer par nbCharacters en production
 			let response = await get(`characters?limit=100&offset=${offset}`)
 			allCharacters=[...allCharacters,...response.data.data.results]
 			offset=offset+100
 		}
 
 		setIsLoaded(true)
-		console.log(allCharacters)
 		setAllCharacters(allCharacters)
 	}
 
@@ -45,8 +44,6 @@ function SearchField(){
 		}
 
 		setCharacters(resultCharacters)
-
-		console.log("characters",resultCharacters)
 	}
 
 

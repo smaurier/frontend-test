@@ -9,11 +9,7 @@ import { Icon, Size } from '@lumx/react';
 function Detail(){
     const {characters} = useCharacterContext()
     const { id } = useParams();
-
     const specifiedCharacter = characters.find(character => character.id === parseInt(id))
-    console.log("characters in detail",characters);
-    console.log("specifiedCharacter",specifiedCharacter);
-
     const history = useHistory();
 
     if(specifiedCharacter === undefined ){
@@ -34,9 +30,11 @@ function Detail(){
         if(specifiedCharacter.events.items) {
             mapLatestEvents = specifiedCharacter.events.items.map((event,key) => <li key={key} className="lumx-typography-body2"><Icon icon={mdiCalendar} size={Size.s}/> {event.name} </li>)
         }
+
         if(specifiedCharacter.series.items) {
             mapLatestSeries = specifiedCharacter.series.items.map((serie,key) => <li key={key} className="lumx-typography-body2"><Icon icon={mdiTelevision} size={Size.s}/> {serie.name} </li>)
         }
+
         if(specifiedCharacter.stories.items) {
             mapLatestStories = specifiedCharacter.stories.items.map((story,key) => <li key={key} className="lumx-typography-body2"><Icon icon={mdiTheater} size={Size.s}/> {story.type} : {story.name} </li>)
         }
@@ -97,7 +95,6 @@ function Detail(){
             </main>
         )
     }
-
 }
 
 export default Detail
