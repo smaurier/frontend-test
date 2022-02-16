@@ -3,11 +3,12 @@ import { TextField, Theme } from '@lumx/react';
 import { mdiMagnify } from '@lumx/icons';
 import { get } from '../../api';
 import useCharacterContext from "../../hooks/useCharacterContext";
-import { Progress, ProgressVariant } from '@lumx/react';
+import { Progress } from '@lumx/react';
 
 function SearchField(){
 	const [isLoaded, setIsLoaded] = useState(false)
 	const [allCharacters, setAllCharacters] = useState(false)
+	// eslint-disable-next-line
 	const {characters, setCharacters} = useCharacterContext()
 
 	useEffect(() => {
@@ -21,7 +22,7 @@ function SearchField(){
 		let offset=0;
 		let allCharacters = [];
 
-		while(offset <= 200 ){ //200 pour eviter de saturer l'api, à remplacer par nbCharacters
+		while(offset <= nbCharacters ){ //200 pour eviter de saturer l'api, à remplacer par nbCharacters en production
 			let response = await get(`characters?limit=100&offset=${offset}`)
 			allCharacters=[...allCharacters,...response.data.data.results]
 			offset=offset+100

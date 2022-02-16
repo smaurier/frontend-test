@@ -4,16 +4,6 @@ import { CharactersContextProvider } from '../contexts/characterContext';
 import { SearchResultContextProvider } from '../contexts/resultContext';
 import MainRouter from '../router';
 import './App.scss';
-// import Cards from '../components/Cards';
-
-// i18n ?
-// html5
-// balises aria
-// accessibilité ?
-// ergonomie ?
-// utiliser flex et grid
-// utiliser mixins et variables
-// reset css
 
 function App() {
   return (

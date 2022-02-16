@@ -17,7 +17,7 @@ function Card (props){
 
 	return(
 		<div className='card'>
-			<img src={thumbnail}/>
+			<img src={thumbnail} alt={nameCharacter} aria-labelledby={nameCharacter}/>
 			<div>
 				<p className="lumx-typography-display1">{nameCharacter}</p>
 				<p className="lumx-typography-body2">

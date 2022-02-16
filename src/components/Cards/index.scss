@@ -3,10 +3,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         & > p {
             display: inline-block;
             margin: 0 16px;
             font-size: 32px;
+        }
+
+        & > button {
+
+            & > span {
+                @media (max-width: map_get($breakpoints, sm)){
+                    display: none;
+                }
+            }
         }
     }
 }

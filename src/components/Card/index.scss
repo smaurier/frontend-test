@@ -5,6 +5,11 @@
     padding: 24px 36px 24px 24px;
     margin-bottom: 40px;
 
+    @media (max-width: map_get($breakpoints, sm)){
+        flex-direction: column;
+        padding: 24px;
+    }
+
     img {
         width: 250px;
         height: 250px;
@@ -14,6 +19,10 @@
         object-fit: cover;
         flex-shrink: 0;
         border: 1px solid lumx-color-variant('primary', 'L5');
+
+        @media (max-width: map_get($breakpoints, sm)){
+            width: 100%;
+        }
     }
 
     & > div {
@@ -32,6 +41,13 @@
                 color: lumx-color-variant('primary', 'L2')
             }
         }
+        
+        & > button {
+            @media (max-width: map_get($breakpoints, sm)){
+                width: 100%;
+            }
+        }
     }
+
 
 }

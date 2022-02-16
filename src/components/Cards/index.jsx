@@ -28,9 +28,9 @@ function Cards (){
 			<section className='cards'>
 				{mapCards}
 				<div className="pagination">
-					{currentPage>1?<Button leftIcon={mdiSkipPreviousOutline} emphasis={Emphasis.medium} onClick={handleClickPrevious}>page précèdente</Button>:null}
+					{currentPage>1?<Button aria-hidden="true" aria-describedby="page-precedente" leftIcon={mdiSkipPreviousOutline} emphasis={Emphasis.medium} onClick={handleClickPrevious}>page précèdente</Button>:null}
 					<p><span className="current">{currentPage}</span> / {Math.floor(characters.length/4)+1}</p>
-					{currentPage<Math.floor(characters.length/4)+1?<Button leftIcon={mdiSkipNextOutline} emphasis={Emphasis.medium} onClick={handleClickNext}>Page suivante</Button>:null}	
+					{currentPage<Math.floor(characters.length/4)+1?<Button aria-hidden="true" aria-describedby="page-suivante" leftIcon={mdiSkipNextOutline} emphasis={Emphasis.medium} onClick={handleClickNext}>Page suivante</Button>:null}	
 				</div>
 			</section>
 		)	
