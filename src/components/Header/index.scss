@@ -1,22 +1,22 @@
 .header {
     background-color: lumx-color-variant('primary', 'N');
 
-    & > div {
+    &>div {
         justify-content: space-between;
-        max-width:1500px;
+        max-width: 1500px;
         margin: auto;
         padding: 0 3%;
 
-        @media (max-width: map_get($breakpoints, sm)){
+        @media (max-width: map_get($breakpoints, sm)) {
             flex-direction: column;
             align-items: center;
         }
 
-        .logo{
+        .logo {
             width: 200px;
             height: 80px;
 
-            @media (max-width: map_get($breakpoints, sm)){
+            @media (max-width: map_get($breakpoints, sm)) {
                 margin-bottom: 8px;
             }
         }

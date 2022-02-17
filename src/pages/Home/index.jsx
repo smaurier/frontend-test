@@ -1,10 +1,10 @@
 import React from "react";
 import Cards from "../../components/Cards";
 
-function Home(){
+function Home() {
     return (
-        <main class="container">
-            <Cards/>
+        <main className="container">
+            <Cards />
         </main>
     )
 }

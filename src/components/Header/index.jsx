@@ -6,7 +6,7 @@ import { ReactComponent as Logo } from '../../medias/logo.svg';
 const Header = () => (
 	<header className="lumx-spacing-padding-big header">
 		<FlexBox vAlign={Alignment.spaceBetween}>
-			<Logo className="logo"/>
+			<Logo className="logo" />
 			<SearchField />
 		</FlexBox>
 	</header>

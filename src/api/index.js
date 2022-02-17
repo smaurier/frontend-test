@@ -16,4 +16,6 @@ const get = (url, query) => instance.get(url, {
   },
 });
 
-export { instance as api, get };
+export {
+  instance as api, get
+};

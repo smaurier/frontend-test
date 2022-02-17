@@ -4,16 +4,16 @@
         justify-content: center;
         align-items: center;
 
-        & > p {
+        &>p {
             display: inline-block;
             margin: 0 16px;
             font-size: 32px;
         }
 
-        & > button {
+        &>button {
 
-            & > span {
-                @media (max-width: map_get($breakpoints, sm)){
+            &>span {
+                @media (max-width: map_get($breakpoints, sm)) {
                     display: none;
                 }
             }
@@ -21,13 +21,13 @@
     }
 }
 
-.noResult{
+.noResult {
     text-align: center;
-    img{
+
+    img {
         height: 200px;
         width: 330px;
         object-fit: cover;
         margin-top: 44px;
     }
 }
-

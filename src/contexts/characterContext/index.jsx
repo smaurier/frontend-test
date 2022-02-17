@@ -1,17 +1,17 @@
-import React,{createContext, useState} from "react";
+import React, { createContext, useState } from "react";
 
-const CharactersContext = createContext()
+const CharactersContext = createContext();
 
-export default CharactersContext
+export default CharactersContext;
 
-export function CharactersContextProvider({children}){
-    const [characters, setCharacters] = useState([])
+export function CharactersContextProvider({ children }) {
+    const [characters, setCharacters] = useState([]);
     const charactersData = {
         characters,
         setCharacters
     }
 
-    return(
+    return (
         <CharactersContext.Provider value={charactersData}>
             {children}
         </CharactersContext.Provider>

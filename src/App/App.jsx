@@ -6,15 +6,15 @@ import MainRouter from '../router';
 import './App.scss';
 
 function App() {
-  return (
-	<>
-	<SearchResultContextProvider>
-	  <CharactersContextProvider>
-	    <MainRouter />
-      </CharactersContextProvider>
-	</SearchResultContextProvider>
-	</>
-  );
+	return (
+		<>
+			<SearchResultContextProvider>
+				<CharactersContextProvider>
+					<MainRouter />
+				</CharactersContextProvider>
+			</SearchResultContextProvider>
+		</>
+	);
 }
 
 export default App;

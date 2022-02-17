@@ -1,11 +1,11 @@
-.card{
+.card {
     border-radius: 4px;
     border: 1px solid lumx-color-variant('primary', 'L3');
     display: flex;
     padding: 24px 36px 24px 24px;
     margin-bottom: 40px;
 
-    @media (max-width: map_get($breakpoints, sm)){
+    @media (max-width: map_get($breakpoints, sm)) {
         flex-direction: column;
         padding: 24px;
     }
@@ -20,30 +20,31 @@
         flex-shrink: 0;
         border: 1px solid lumx-color-variant('primary', 'L5');
 
-        @media (max-width: map_get($breakpoints, sm)){
+        @media (max-width: map_get($breakpoints, sm)) {
             width: 100%;
         }
     }
 
-    & > div {
+    &>div {
         width: 100%;
 
         .lumx-typography-display1 {
             margin-bottom: $lumx-spacing-unit-big;
         }
-    
-        .lumx-typography-body2{
+
+        .lumx-typography-body2 {
             min-height: 130px;
             margin-bottom: $lumx-spacing-unit-huge;
             background-color: lumx-color-variant('primary', 'L6');
             padding: 16px;
+
             .span--noResult {
                 color: lumx-color-variant('primary', 'L2')
             }
         }
-        
-        & > button {
-            @media (max-width: map_get($breakpoints, sm)){
+
+        &>button {
+            @media (max-width: map_get($breakpoints, sm)) {
                 width: 100%;
             }
         }
